@@ -66,6 +66,7 @@ public class DataEntry extends JFrame {
         openFileChooser = new JFileChooser();
         openFileChooser.setCurrentDirectory(new File("c:\\temp"));
         openFileChooser.setFileFilter(new FileNameExtensionFilter("TXT file","txt"));
+        openFileChooser.setFileFilter(new FileNameExtensionFilter("fna file","fna"));
 
         openFileChooser.setFileFilter(new FileNameExtensionFilter("fn file","fn"));
 
@@ -111,7 +112,7 @@ public class DataEntry extends JFrame {
         ResultArea.setLineWrap(true);
         ResultArea.setEditable(false);
 
-        String[] algoString = {"Brute Force", "First Custom", "KMP"};
+        String[] algoString = {"Brute Force", "Rabin Karp", "KMP"};
         JComboBox AlgorithmDropDown = new JComboBox(algoString);
         AlgorithmDropDown.setBounds(180, 102, 139, 23);
         contentPane.add(AlgorithmDropDown);
@@ -133,16 +134,16 @@ public class DataEntry extends JFrame {
                         String resultString ="\n------------------------------------------ \n" + "Search by Brute Force Algorithm \n"
                                 + found + " items found in given text \nPosition: " + result.getPosition() +"\nTotalTime: " + result.getExecutionTime() +"milliseconds";
                         ResultArea.append(resultString);
-                    }else if(algo == "First Custom") {
-                        ResultModel result = Algo_FCustom.search(SearchMainString,SearchSubString);
+                    }else if(algo == "Rabin Karp") {
+                        ResultModel result = Algo_Rabin_Karp.search(SearchMainString,SearchSubString);
                         found = result.getFoundCount();
-                        String resultString ="\n------------------------------------------ \n" + "Search by First Custom Algorithm \n"
+                        String resultString ="\n------------------------------------------ \n" + "Search by Rabin Karp Algorithm \n"
                                 + found + " items found in given text \nPosition: " + result.getPosition() + "\nTotalTime: " + result.getExecutionTime() +"milliseconds";
                         ResultArea.append(resultString);
                     }else if(algo == "KMP") {
                         ResultModel result = Algo_KMP.search(SearchMainString,SearchSubString);
                         found = result.getFoundCount();
-                        String resultString ="\n------------------------------------------ \n" + "Search by Second Custom Algorithm \n"
+                        String resultString ="\n------------------------------------------ \n" + "Search by KMP Algorithm \n"
                                 + found + " items found in given text \nPosition: " + result.getPosition() + "\nTotalTime: " + result.getExecutionTime() +"milliseconds";;
                         ResultArea.append(resultString);
                     }
