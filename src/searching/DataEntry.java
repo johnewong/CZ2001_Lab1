@@ -111,7 +111,7 @@ public class DataEntry extends JFrame {
         ResultArea.setLineWrap(true);
         ResultArea.setEditable(false);
 
-        String[] algoString = {"Brute Force", "First Custom", "Second Custom"};
+        String[] algoString = {"Brute Force", "First Custom", "KMP"};
         JComboBox AlgorithmDropDown = new JComboBox(algoString);
         AlgorithmDropDown.setBounds(180, 102, 139, 23);
         contentPane.add(AlgorithmDropDown);
@@ -139,8 +139,8 @@ public class DataEntry extends JFrame {
                         String resultString ="\n------------------------------------------ \n" + "Search by First Custom Algorithm \n"
                                 + found + " items found in given text \nPosition: " + result.getPosition() + "\nTotalTime: " + result.getExecutionTime() +"milliseconds";
                         ResultArea.append(resultString);
-                    }else if(algo == "Second Custom") {
-                        ResultModel result = Algo_SCustom.search(SearchMainString,SearchSubString);
+                    }else if(algo == "KMP") {
+                        ResultModel result = Algo_KMP.search(SearchMainString,SearchSubString);
                         found = result.getFoundCount();
                         String resultString ="\n------------------------------------------ \n" + "Search by Second Custom Algorithm \n"
                                 + found + " items found in given text \nPosition: " + result.getPosition() + "\nTotalTime: " + result.getExecutionTime() +"milliseconds";;
