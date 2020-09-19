@@ -68,7 +68,7 @@ public class DataEntry extends JFrame {
         openFileChooser.setFileFilter(new FileNameExtensionFilter("TXT file","txt"));
         openFileChooser.setFileFilter(new FileNameExtensionFilter("fna file","fna"));
 
-        openFileChooser.setFileFilter(new FileNameExtensionFilter("fn file","fn"));
+    /*    openFileChooser.setFileFilter(new FileNameExtensionFilter("fn file","fn")); */
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(550, 550, 700, 500);
