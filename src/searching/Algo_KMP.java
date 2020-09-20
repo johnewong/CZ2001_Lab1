@@ -15,7 +15,12 @@ public class Algo_KMP {
         int lps[] = new int[lengthOfPattern]; 
         int j = 0; // index for pat[] 
         computeLPSArray(pattern, lengthOfPattern, lps); 
-      
+
+        //System.out.println("----");
+        // for (int element: lps) {
+
+        //     System.out.println(element);
+        //  }
         int i = 0;  
         while (i < lengthOfText) { 
               if (pattern.charAt(j) == text.charAt(i)) { 
@@ -37,11 +42,12 @@ public class Algo_KMP {
       
                 
                 else if (i < lengthOfText && pattern.charAt(j) != text.charAt(i)) { 
-                    
+                	
                     if (j != 0) 
                         j = lps[j - 1]; 
                     else
                         i = i + 1; 
+                    
                 } 
             } 
             long endTime   = System.nanoTime();
@@ -78,6 +84,6 @@ public class Algo_KMP {
                     } 
                 } 
             }
-            
+           
         }
 }
