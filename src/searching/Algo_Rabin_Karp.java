@@ -6,8 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Algo_Rabin_Karp {
 
-	public final static int d = 85; 
-	public final static int q = 300761; 
+	public final static int d = 86; 
+	public final static int q = 293729; 
     
     // First custom searching algorithem
     public static ResultModel search(String text, String pattern) {
@@ -33,13 +33,16 @@ public class Algo_Rabin_Karp {
         { 
             p = (d*p + pattern.charAt(i))%q; 
             t = (d*t + text.charAt(i))%q; 
-        } 
-       
 
+
+        } 
+
+        System.out.println(p);
         // Slide the pattern over text one by one 
         for (i = 0; i <= N - M; i++) 
         { 
-      
+
+         
             // Check the hash values of current window of text 
             // and pattern. If the hash values match then only 
             // check for characters on by one 
@@ -69,13 +72,16 @@ public class Algo_Rabin_Karp {
             if ( i < N-M ) 
             { 
                 t = (d*(t - text.charAt(i)*h) + text.charAt(i+M))%q; 
-      
+
+             
                 // We might get negative value of t, converting it 
                 // to positive 
                 if (t < 0) {
 
                     t = (t + q); 
                 }
+                
+
             } 
         } 
 

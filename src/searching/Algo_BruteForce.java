@@ -26,12 +26,18 @@ public class Algo_BruteForce {
         int Count = 0;
         String positionText = "";
         for(int i=0; i<=lengthOfText - lengthOfPattern; i++) {
-            int j;
+            int j=0;
 
-            for(j=0;j<lengthOfPattern; j++) {
-                if(text.charAt(i+j)!=pattern.charAt(j))
-                    break;
+            while(j<lengthOfPattern) {
+            	 if(text.charAt(i+j)!=pattern.charAt(j))
+                     break;
+            	 j++;
             }
+            
+            // for(j=0;j<lengthOfPattern; j++) {
+            //     if(text.charAt(i+j)!=pattern.charAt(j))
+            //         break;
+            //  }
 
             if(j==lengthOfPattern) {
                 Count ++;
