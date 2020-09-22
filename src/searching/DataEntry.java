@@ -178,6 +178,7 @@ public class DataEntry extends JFrame {
 
                     try {
                         br = new BufferedReader(new FileReader(openFileChooser.getSelectedFile()));
+                        br.readLine();
                         Scanner scan = new Scanner(br);
                         String ss = "";
                         while(scan.hasNextLine()) {

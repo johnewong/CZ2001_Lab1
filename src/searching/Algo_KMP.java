@@ -16,11 +16,6 @@ public class Algo_KMP {
         int j = 0; // index for pat[] 
         computeLPSArray(pattern, lengthOfPattern, lps); 
 
-        //System.out.println("----");
-        // for (int element: lps) {
-
-        //     System.out.println(element);
-        //  }
         int i = 0;  
         while (i < lengthOfText) { 
               if (pattern.charAt(j) == text.charAt(i)) { 
@@ -31,9 +26,9 @@ public class Algo_KMP {
                 	Count ++;
                     // return i
                     if(positionText == "") {
-                        positionText += ( i - j);
+                        positionText += ( i - j + 1) + "th";
                     }else {
-                        positionText = positionText + ", " + ( i - j);
+                        positionText = positionText + ", " + ( i - j + 1) + "th";
                     }
                     
                  

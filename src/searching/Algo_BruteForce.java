@@ -43,9 +43,9 @@ public class Algo_BruteForce {
                 Count ++;
                 // return i
                 if(positionText == "") {
-                    positionText += i;
+                    positionText += (i + 1) + "th";
                 }else {
-                    positionText = positionText + ", " + i;
+                    positionText = positionText + ", " + (i + 1) + "th";
                 }
             }
         }

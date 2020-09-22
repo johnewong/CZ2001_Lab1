@@ -36,13 +36,12 @@ public class Algo_Rabin_Karp {
 
 
         } 
-
-        System.out.println(p);
+        
+     
         // Slide the pattern over text one by one 
         for (i = 0; i <= N - M; i++) 
         { 
-
-         
+          
             // Check the hash values of current window of text 
             // and pattern. If the hash values match then only 
             // check for characters on by one 
@@ -60,9 +59,9 @@ public class Algo_Rabin_Karp {
                 	Count ++;
 	                // return i
 	                if(positionText == "") {
-	                    positionText += (i);
+	                    positionText += (i+ 1) + "th";
 	                }else {
-	                    positionText = positionText + ", " + (i);
+	                    positionText = positionText + ", " + (i+1) + "th";
 	                }
                 }
             } 
@@ -71,18 +70,18 @@ public class Algo_Rabin_Karp {
             // leading digit, add trailing digit 
             if ( i < N-M ) 
             { 
-                t = (d*(t - text.charAt(i)*h) + text.charAt(i+M))%q; 
 
-             
+                t = (d*(t - text.charAt(i)*h) + text.charAt(i+M))%q; 
+      
                 // We might get negative value of t, converting it 
                 // to positive 
                 if (t < 0) {
 
                     t = (t + q); 
                 }
-                
-
+               
             } 
+         
         } 
 
         //End of code
